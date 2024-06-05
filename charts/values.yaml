@@ -1,5 +1,5 @@
 scheduler:
-  name: my-scheduler 
+  name: my-scheduler
   image: my-scheduler:local
   imagePullPolicy: Never
   replicaCount: 1
@@ -11,4 +11,4 @@ plugins:
 pluginConfig:
 - name: CustomScheduler
   args:
-    mode: Least
+    mode: Most

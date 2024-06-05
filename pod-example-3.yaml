@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    podGroup: "A"
+    minAvailable: "1"
+spec:
+  schedulerName: my-scheduler
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "400Mi"
+      limits:
+        memory: "400Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-2
+  labels:
+    podGroup: "B"
+    minAvailable: "2"
+spec:
+  schedulerName: my-scheduler
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "100Mi"
+      limits:
+        memory: "100Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-3
+  labels:
+    podGroup: "B"
+    minAvailable: "2"
+spec:
+  schedulerName: my-scheduler
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "1000Mi"
+      limits:
+        memory: "1000Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-4
+  labels:
+    podGroup: "B"
+    minAvailable: "2"
+spec:
+  schedulerName: my-scheduler
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "100Mi"
+      limits:
+        memory: "100Mi"
